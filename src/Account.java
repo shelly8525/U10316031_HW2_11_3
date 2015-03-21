@@ -33,7 +33,7 @@ public class Account {
 		this.blance = blance;
 	}
 	
-	public void setAnnualInterestRate(){
+	public void setAnnualInterestRate(double annualInterestRate){
 		this.annualInterestRate = annualInterestRate;
 	}
 	
@@ -54,9 +54,26 @@ public class Account {
 	}
 	
 	public static void main(String[] args){
-		Account savingAccount = new Account(1122,20000);
-		Account CheckAccount = new Account(1271,150);
+		Account savingsAccount = new Account(1122,20000);
+		Account checkingAccount = new Account(1271,150);
 		System.out.println("Accounts Created!");
-		
+		System.out.println(savingsAccount);
+		System.out.println(checkingAccount);
+		savingsAccount.setAnnualInterestRate(4.5);
+		checkingAccount.setAnnualInterestRate(1.25);
+		System.out.println("Updating Interest");
+		System.out.println(savingsAccount);
+	    System.out.println(checkingAccount);
+	    savingsAccount.withdraw(5000);
+	    checkingAccount.withdraw(300);
+	    System.out.println("Processing Withdraw");
+	    System.out.println(savingsAccount);
+	    System.out.println(checkingAccount);
+	    savingsAccount.deposit(10000);
+	    checkingAccount.deposit(500);
+	    System.out.println("Processing Deposit");
+	    System.out.println(savingsAccount);
+	    System.out.println(checkingAccount);
+	    System.out.println("Thank you for your business!");
 	}
 }
