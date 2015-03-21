@@ -1,11 +1,8 @@
-import java.util,Scanner;
-
 public class Account {
 	private int id = 0;
 	private double blance = 0;
 	private double annualInterestRate = 0;
 	private java.util.Date dateCreated;
-	input Scanner = new input(System.in);
 	
 	public Account(int id,double blance){
 		this.id = id;
@@ -48,7 +45,18 @@ public class Account {
 		return blance*(annualInterestRate/12/100);
 	}
 	
-	public double withdraw(){
+	public double withdraw(double withdraw1){	
+		return blance -= withdraw1;
+	}
+	
+	public double deposit(double deposit1){	
+		return blance += deposit1;
+	}
+	
+	public static void main(String[] args){
+		Account savingAccount = new Account(1122,20000);
+		Account CheckAccount = new Account(1271,150);
+		System.out.println("Accounts Created!");
 		
 	}
 }
