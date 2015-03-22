@@ -1,14 +1,15 @@
 public class Account {
+	//four variables
 	private int id = 0;
 	private double blance = 0;
 	private double annualInterestRate = 0;
 	private java.util.Date dateCreated;
-	
+	//the constrc]uctor
 	public Account(int id,double blance){
 		this.id = id;
 		this.blance = blance;
 	}
-	
+	//the accessor method
 	public int getId(){
 		return id;
 	}
@@ -24,7 +25,7 @@ public class Account {
 	public java.util.Date getDateCreated(){
 		return dateCreated;
 	}
-	
+	//the mutation method
 	public void setId(int id){
 		this.id = id;
 	}
@@ -36,7 +37,7 @@ public class Account {
 	public void setAnnualInterestRate(double annualInterestRate){
 		this.annualInterestRate = annualInterestRate;
 	}
-	
+	//the method
 	public double getMonthlyInterestRate(){
 		return annualInterestRate/12/100;
 	}
@@ -54,6 +55,7 @@ public class Account {
 	}
 	
 	public static void main(String[] args){
+		//main method test object
 		Account savingsAccount = new Account(1122,20000);
 		Account checkingAccount = new Account(1271,150);
 		System.out.println("Accounts Created!");
