@@ -4,7 +4,7 @@ public class Account {
 	private double blance = 0;
 	private double annualInterestRate = 0;
 	private java.util.Date dateCreated;
-	//the constrc]uctor
+	//the constructor
 	public Account(int id,double blance){
 		this.id = id;
 		this.blance = blance;
@@ -56,26 +56,26 @@ public class Account {
 	
 	public static void main(String[] args){
 		//main method test object
-		Account savingsAccount = new Account(1122,20000);
-		Account checkingAccount = new Account(1271,150);
+		SavingsAccount savingsAccount1 = new SavingsAccount(1122,20000);
+		CheckingAccount checkingAccount1 = new CheckingAccount(1271,150);
 		System.out.println("Accounts Created!");
-		System.out.println(savingsAccount);
-		System.out.println(checkingAccount);
-		savingsAccount.setAnnualInterestRate(4.5);
-		checkingAccount.setAnnualInterestRate(1.25);
+		System.out.println(savingsAccount1.toString());
+		System.out.println(checkingAccount1.toString());
+		savingsAccount1.setAnnualInterestRate(4.5);
+		checkingAccount1.setAnnualInterestRate(1.25);
 		System.out.println("Updating Interest");
-		System.out.println(savingsAccount);
-	    System.out.println(checkingAccount);
-	    savingsAccount.withdraw(5000);
-	    checkingAccount.withdraw(300);
+		System.out.println(savingsAccount1.toString());
+	    System.out.println(checkingAccount1.toString());
+	    savingsAccount1.withdraw(5000);
+	    checkingAccount1.withdraw(300);
 	    System.out.println("Processing Withdraw");
-	    System.out.println(savingsAccount);
-	    System.out.println(checkingAccount);
-	    savingsAccount.deposit(10000);
-	    checkingAccount.deposit(500);
+	    System.out.println(savingsAccount1.toString());
+	    System.out.println(checkingAccount1.toString());
+	    savingsAccount1.deposit(10000);
+	    checkingAccount1.deposit(500);
 	    System.out.println("Processing Deposit");
-	    System.out.println(savingsAccount);
-	    System.out.println(checkingAccount);
+	    System.out.println(savingsAccount1.toString());
+	    System.out.println(checkingAccount1.toString());
 	    System.out.println("Thank you for your business!");
 	}
 }
