@@ -1,17 +1,21 @@
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Account {
 	//four variables
-	private String name;
+	private static String name;
 	private int id = 0;
-	private double blance = 0;
-	private double annualInterestRate = 0;
+	private static double blance = 0;
+	private static double annualInterestRate = 0;
 	private java.util.Date dateCreated;
-	private java.util.ArrayList transactions = new java.util.ArrayList();
+	
+	static ArrayList<Transaction> list = new ArrayList<Transaction>();
 	
 	//the constructor
 	public Account(int id,double blance,String name){
-		this.setName(name);
+		Account.name = name;
 		this.id = id;
-		this.blance = blance;
+		Account.blance = blance;
 	}
 	//the accessor method
 	public int getId(){
@@ -22,7 +26,7 @@ public class Account {
 		return blance;
 	}
 	
-	public double getAnnualInterestRate(){
+	public static double getAnnualInterestRate(){
 		return annualInterestRate;
 	}
 	
@@ -30,8 +34,8 @@ public class Account {
 		return dateCreated;
 	}
 	
-	public java.util.ArrayList getTransactions() {
-	    return transactions;
+	public ArrayList<Transaction> getList() {
+	    return list;
 	 }
 	
 	public String getName() {
@@ -44,15 +48,15 @@ public class Account {
 	}
 	
 	public void setBlance(double blance){
-		this.blance = blance;
+		Account.blance = blance;
 	}
 	
 	public void setAnnualInterestRate(double annualInterestRate){
-		this.annualInterestRate = annualInterestRate;
+		Account.annualInterestRate = annualInterestRate;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		Account.name = name;
 	}
 	
 	//the method
@@ -74,27 +78,25 @@ public class Account {
 	
 	public static void main(String[] args){
 		//main method test object
-		SavingsAccount savingsAccount1 = new SavingsAccount(1122,20000);
-		CheckingAccount checkingAccount1 = new CheckingAccount(1271,150);
-		System.out.println("Accounts Created!");
-		System.out.println(savingsAccount1.toString());
-		System.out.println(checkingAccount1.toString());
-		savingsAccount1.setAnnualInterestRate(4.5);
-		checkingAccount1.setAnnualInterestRate(1.25);
-		System.out.println("Updating Interest");
-		System.out.println(savingsAccount1.toString());
-	    System.out.println(checkingAccount1.toString());
-	    savingsAccount1.withdraw(5000);
-	    checkingAccount1.withdraw(300);
-	    System.out.println("Processing Withdraw");
-	    System.out.println(savingsAccount1.toString());
-	    System.out.println(checkingAccount1.toString());
-	    savingsAccount1.deposit(10000);
-	    checkingAccount1.deposit(500);
-	    System.out.println("Processing Deposit");
-	    System.out.println(savingsAccount1.toString());
-	    System.out.println(checkingAccount1.toString());
-	    System.out.println("Thank you for your business!");
+		Account Account1 = new Account(1122, 1000,"George");
+		
+		Account1.withdraw(30);
+		Account1.withdraw(40);
+		Account1.withdraw(50);
+		
+		Account1.deposit(2);
+		Account1.deposit(4);
+		Account1.deposit(5);
+		
+		 Account1.setAnnualInterestRate(1.5);
+		
+		 System.out.println("Name: " + Account1.getName());
+		 System.out.println("Annual interest rate: " + Account1.getAnnualInterestRate());
+		 System.out.println("Balance: " + Account1.getBlance());
+		
+		for(int i = 0;i < list.size();i++){
+		      System.out.printf("%-35s%-15s%-15s%-15s\n",  Account1.list.getDate(),  Account1.list.getType(),  Account1.list.getAmount(),  Account1.list.getBalance());
+		}
 	}
 	
 	
