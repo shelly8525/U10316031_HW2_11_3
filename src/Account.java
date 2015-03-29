@@ -8,7 +8,6 @@ public class Account {
 	private static double blance = 0;
 	private static double annualInterestRate = 0;
 	private java.util.Date dateCreated;
-	private double amount;
 	
 	static ArrayList<Transaction> list = new ArrayList<Transaction>();
 	
@@ -70,16 +69,11 @@ public class Account {
 	}
 	
 	public double withdraw(double withdraw1){	
-		blance -= withdraw1;
-		list.add(new Transaction('W', withdraw1, blance, ""));
-		return blance ;
-		
+		return blance -= withdraw1;
 	}
 	
 	public double deposit(double deposit1){	
-		blance += deposit1;
-		list.add(new Transaction('D', deposit1, blance, ""));
-		return blance;
+		return blance += deposit1;
 	}
 	
 	public static void main(String[] args){
@@ -101,8 +95,7 @@ public class Account {
 		 System.out.println("Balance: " + Account1.getBlance());
 		
 		for(int i = 0;i < list.size();i++){
-		      System.out.printf("%-35s%-15s%-15s%-15s\n",     Account1.list.get(i).getDate(), 
-		    		  Account1.list.get(i).getType(),  Account1.list.get(i).getAmount(), Account1.list.get(i).getBalance());
+		      System.out.printf("%-35s%-15s%-15s%-15s\n",  Account1.list.getDate(),  Account1.list.getType(),  Account1.list.getAmount(),  Account1.list.getBalance());
 		}
 	}
 	
