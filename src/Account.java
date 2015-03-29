@@ -1,11 +1,15 @@
 public class Account {
 	//four variables
+	private String name;
 	private int id = 0;
 	private double blance = 0;
 	private double annualInterestRate = 0;
 	private java.util.Date dateCreated;
+	private java.util.ArrayList transactions = new java.util.ArrayList();
+	
 	//the constructor
-	public Account(int id,double blance){
+	public Account(int id,double blance,String name){
+		this.setName(name);
 		this.id = id;
 		this.blance = blance;
 	}
@@ -25,6 +29,15 @@ public class Account {
 	public java.util.Date getDateCreated(){
 		return dateCreated;
 	}
+	
+	public java.util.ArrayList getTransactions() {
+	    return transactions;
+	 }
+	
+	public String getName() {
+		return name;
+	}
+	
 	//the mutation method
 	public void setId(int id){
 		this.id = id;
@@ -37,6 +50,11 @@ public class Account {
 	public void setAnnualInterestRate(double annualInterestRate){
 		this.annualInterestRate = annualInterestRate;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	//the method
 	public double getMonthlyInterestRate(){
 		return annualInterestRate/12/100;
@@ -78,4 +96,6 @@ public class Account {
 	    System.out.println(checkingAccount1.toString());
 	    System.out.println("Thank you for your business!");
 	}
+	
+	
 }
